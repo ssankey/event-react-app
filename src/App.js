@@ -9,7 +9,9 @@ function App() {
   return (
     
     <div className="app">
-      <h1>Search Events</h1>
+      <div className="banner">
+      <h1>Looking For Events??</h1>
+      </div>
       <Menu/>
     </div>
   );

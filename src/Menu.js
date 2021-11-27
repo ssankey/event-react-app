@@ -1,14 +1,16 @@
 import React from 'react'
 import Axios from "axios"
-import { useState,useEffect } from "react"
+import { useState,useEffect,useRef } from "react"
 import EventItems from './EventItems'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { getByDisplayValue } from '@testing-library/dom'
 
 
 export default function Menu() {
     const [event, setevent] = useState([])
     const [dat, setdat] = useState([])
     const [state, setstate] = useState('')
-    var elements = document.getElementsByClassName("column");
+    var elements = document.getElementById("MyId");
     var i;
     var url = 'https://allevents.s3.amazonaws.com/tests/categories.json'
     useEffect(() => {
@@ -37,30 +39,62 @@ export default function Menu() {
     }
 
     // function listView() {
-    //     for (i = 0; i < elements.length; i++) {
-    //     //   elements[i].style.backgroundColor='black'  
-    //       elements[i].style.width = "100%";
+    //     console.log("list-view")
+    //         for (i = 0; i < elements.length; i++) {
+    //       elements[i].style.backgroundColor='black';
+    //     //   elements[i].style.width='black';
     //     }
     //   }
       
-    //   // Grid View
+    // //   Grid View
     //   function gridView() {
     //     for (i = 0; i < elements.length; i++) {
-    //       elements[i].style.width = "50%";
-    //     //   elements[i].style.cssFloat = "left";
+    //         elements[i].style.backgroundColor='red';
     //     }
     //   }
+
+    // function toggle(){
+    //     for (i = 0; i < elements.length; i++) {
+    //          if(document.getElementById("MyId").className === "column")
+    //          document.getElementById("MyId").className = "grid";
+    //     else
+    //          document.getElementById("MyId").className = "column";
+    //     }
+    // }
+
+    var wrapper = document.getElementById("wrapper");
+    function toggle(){
+        console.log("hrlllo")
+        // wrapper.classList.remove("grid")
+        wrapper.classList.toggle("list")
+    }
+    // wrapper = useRef(null)
+    // document.addEventListener("click", function (event) {
+    //     if (!event.target.matches(".lis")) return;
+    //     event.preventDefault();
+    //     wrapper.classList.add("list");
+    // });
+    // document.addEventListener("click", function (event) {
+    //     if (!event.target.matches(".grid")) return;
+    //     event.preventDefault();
+    //     wrapper.classList.remove("list");
+    //   });
+
+
+
+
+
+
 
 
     return (
         <div>
-            {/* <div id="btnContainer">
-                <button className="btn " onClick={listView()}><i className="fa fa-bars"></i> List</button>
-                <button className="btn active" onClick={gridView()}><i className="fa fa-th-large"></i> Grid</button>
-            </div> */}
-            <select onChange={sendData} className="drop">
-                {event.map((eve) => <option>{eve.category}</option>)}
-            </select>
+            <div className="top">
+                <button className="lis" onClick={toggle}><i class="fa fa-list"></i>List/Grid</button>
+                <select onChange={sendData} className="drop">
+                    {event.map((eve) => <option>{eve.category}</option>)}
+                </select>
+            </div>
             <EventItems uevent={dat} />
         </div>
     )
