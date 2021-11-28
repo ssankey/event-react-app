@@ -27,7 +27,7 @@ export default function Menu() {
         const result = event.filter((eve) => eve.category === e.target.value)
         var rest = await Axios.get(result[0].data)
         setdat(rest.data.item)
-        // console.log(dat)
+        console.log(dat)
         // console.log(rest.data.item)
     }
 
