@@ -1,27 +1,22 @@
 import React from 'react'
 import Axios from "axios"
-import { useState,useEffect,useRef } from "react"
+import { useState,useEffect } from "react"
 import EventItems from './EventItems'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { getByDisplayValue } from '@testing-library/dom'
 
 
 export default function Menu() {
     const [event, setevent] = useState([])
     const [dat, setdat] = useState([])
-    const [state, setstate] = useState('')
-    var elements = document.getElementById("MyId");
-    var i;
-    var url = 'https://allevents.s3.amazonaws.com/tests/categories.json'
     useEffect(() => {
+        var url = 'https://allevents.s3.amazonaws.com/tests/categories.json'
         async function getEvents() {
             var results = await Axios.get(url);
             setevent(results.data)
-            let eventName = await Axios.get(results.data)
+            // let eventName = await Axios.get(results.data)
             // console.log(results.data)
         }
         getEvents();
-
     }, []);
 
 

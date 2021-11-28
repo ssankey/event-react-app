@@ -1,7 +1,5 @@
-import Menu from "./Menu";
+
 import React from 'react'
-import { useState,useEffect } from "react";
-import Axios from "axios"
 import { Card, Container } from "react-bootstrap";
 
 export default function EventItems({uevent}) {
@@ -12,7 +10,7 @@ export default function EventItems({uevent}) {
             <Card id="wrapper" className="cont">
                 {uevent.map((ent) => <div id="MyId" className="items">
                     <div className="imgBx">
-                        <img src={ent.thumb_url} />
+                        <img src={ent.thumb_url} alt="img" />
                     </div>
                     <Card.Body>
                         <div className="text">
