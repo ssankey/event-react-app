@@ -64,10 +64,15 @@ h1{
 .lis{
   width: 5rem;
   height: 3rem;
-  padding: .5rem;
+  padding: 1rem;
   border-radius: 20%;
   border: none;
+  /* text-align: center; */
+  font-size: 1.1rem;
   margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -154,6 +159,7 @@ h1{
 
 .items:hover{
   transform: scale(1.025);
+  cursor: pointer;
 }
 
 .text {

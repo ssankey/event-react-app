@@ -13,8 +13,6 @@ export default function Menu() {
         async function getEvents() {
             var results = await Axios.get(url);
             setevent(results.data)
-            // let eventName = await Axios.get(results.data)
-            // console.log(results.data)
         }
         getEvents();
     }, []);
