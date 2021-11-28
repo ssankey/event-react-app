@@ -82,8 +82,8 @@ h1{
   /* justify-content: space-between; */
   width: 80%;
   height:  15rem;
-  padding: 1.3rem;
-  border-radius: 2rem;
+  /* padding: 1.3rem;
+  border-radius: 2rem; */
  
 }
 
@@ -92,7 +92,7 @@ h1{
 .list .items .imgBx{
   position: relative;
   width: 40%;
-  height: 230px;
+  height: 240px;
 }
 
 .list .items .imgBx img{
